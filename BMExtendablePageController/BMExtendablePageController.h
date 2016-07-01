@@ -24,11 +24,11 @@
 #endif
 
 #ifndef PAGE_CONTROLLER_PRELOAD_RANGE
-    #define PAGE_CONTROLLER_PRELOAD_RANGE 1
+    #define PAGE_CONTROLLER_PRELOAD_RANGE 2
 #endif
 
 #ifndef PARKING_X_OFFSET_MULTIPLICATOR
-    #define PARKING_X_OFFSET_MULTIPLICATOR  10.
+    #define PARKING_X_OFFSET_MULTIPLICATOR  4.
 #endif
 
 @protocol BMExtendablePageControllerDelegate;
