@@ -313,11 +313,16 @@
     [_pages replaceObjectAtIndex:index withObject:pageCtrl];
     
     // add views to container
-    dispatch_async(dispatch_get_main_queue(), ^{
-
-        pageCtrl.view.frame = [self parkingPosition];
-        [self addSubview:pageCtrl.view];
+  if ([NSThread isMainThread]) {
+    pageCtrl.view.frame = [self parkingPosition];
+    [self addSubview:pageCtrl.view];
+  } else {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+      
+      pageCtrl.view.frame = [self parkingPosition];
+      [self addSubview:pageCtrl.view];
     });
+  }
 }
 
 
